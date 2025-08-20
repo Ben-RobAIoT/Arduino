@@ -87,11 +87,14 @@ print("Tắt LED")
 board.digital[13].write(0)
 board.exit()
 ~~~
+---
+
 ### 5. Dự án thực tế đề xuất
 <img width="932" height="382" alt="image" src="https://github.com/user-attachments/assets/3944ee42-5ef9-4280-bf5d-4b61bc687ae2" />
 ---
-## 6. Kết luận
-- Thư viện pyFirmata là một giải pháp mạnh mẽ để kết nối Arduino và Python, đặc biệt phù hợp cho:
+
+## 📌 Kết luận
+- Thư viện pyFirmata là một giải pháp mạnh mẽ để kết nối Arduino và Python, đặc biệt phù hợp cho
 - Người mới học IoT: Dễ triển khai, code ít, kết quả nhanh.
 - Dự án học thuật: Kết hợp dữ liệu cảm biến và xử lý Python.
 - Ứng dụng AI + IoT: Phân tích dữ liệu thời gian thực.
