@@ -26,14 +26,14 @@ Thư viện **PyFirmata2** được sử dụng thay cho **PyFirmata** để đ�
 Cài PyFirmata2:  
 ```bash
 pip install pyfirmata2
+```
 ⚠️ Lưu ý:
 Không dùng pyfirmata với Python ≥ 3.11 vì sẽ gặp lỗi:
-
-pgsql
-Copy
-Edit
+```pgsql
 AttributeError: module 'inspect' has no attribute 'getargspec'
-🔄 Nạp firmware StandardFirmata vào Arduino
+```
+
+# 🔄 Nạp firmware StandardFirmata vào Arduino
 Mở Arduino IDE
 
 Vào File → Examples → Firmata → StandardFirmata
@@ -44,25 +44,22 @@ Nhấn Upload để nạp firmware
 
 👉 Sau bước này, Arduino đã sẵn sàng nhận lệnh từ Python.
 
-🔍 Xác định cổng COM
+# 🔍 Xác định cổng COM
 Windows
 Mở Device Manager → Ports (COM & LPT)
 
 Ghi lại cổng COM, ví dụ: COM3
 
 Linux / Mac
-bash
-Copy
-Edit
+```bash
 ls /dev/tty*
+```
 Ví dụ: /dev/ttyUSB0
 
-💡 Code Python điều khiển LED_BUILTIN
+## 💡 Code Python điều khiển LED_BUILTIN
 📂 File: led_control.py
 
-python
-Copy
-Edit
+```python
 from pyfirmata2 import Arduino
 import time
 
@@ -90,12 +87,11 @@ while True:
         break
     else:
         print("⚠️ Lệnh không hợp lệ! Vui lòng nhập 1, 0 hoặc q.")
-⏳ Ví dụ: Nhấp nháy LED tự động
+```
+## ⏳ Ví dụ: Nhấp nháy LED tự động
 📂 File: led_blink.py
 
-python
-Copy
-Edit
+```python
 from pyfirmata2 import Arduino
 import time
 
@@ -118,20 +114,22 @@ except KeyboardInterrupt:
     board.digital[LED_BUILTIN].write(0)
     board.exit()
     print("\n🔌 Đã ngắt kết nối.")
-🚨 Lỗi thường gặp & cách khắc phục
+```
+
+# 🚨 Lỗi thường gặp & cách khắc phục
 Lỗi	Nguyên nhân	Cách khắc phục
 SerialException: could not open port	Sai cổng COM hoặc COM bị chiếm	Kiểm tra COM trong Device Manager và đóng Arduino IDE
 AttributeError: module 'inspect' has no attribute 'getargspec'	Dùng PyFirmata với Python ≥ 3.11	Cài PyFirmata2
 LED không sáng	Sai chân LED	Dùng LED_BUILTIN = 13 hoặc chân số tương ứng
 
-📌 Kết luận
+# 📌 Kết luận
 Đối với Python ≤ 3.10: Có thể dùng PyFirmata hoặc PyFirmata2
 
 Đối với Python ≥ 3.11: Bắt buộc dùng PyFirmata2
 
 Khuyến khích nạp StandardFirmata vào Arduino để đảm bảo tương thích
 
-📚 Tài liệu tham khảo
+# 📚 Tài liệu tham khảo
 PyFirmata2 Documentation
 
 Arduino Firmata Protocol
