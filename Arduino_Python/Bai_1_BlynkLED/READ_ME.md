@@ -130,11 +130,7 @@ LED không sáng	Sai chân LED	Dùng LED_BUILTIN = 13 hoặc chân số tương 
 Khuyến khích nạp StandardFirmata vào Arduino để đảm bảo tương thích
 
 # 📚 Tài liệu tham khảo
-PyFirmata2 Documentation
-
-Arduino Firmata Protocol
-
-Python Downloads
+[PyFirmata2 Documentation] (https://pypi.org/project/pyFirmata2/)
 
 👨‍💻 Tác giả
 Beniot Phan - Tin Phan
